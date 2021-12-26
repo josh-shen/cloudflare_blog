@@ -1,0 +1,35 @@
+body {
+  font-family: Verdana;
+  background: rgb(209, 217, 223);
+}
+
+.post_btn{
+  background-color: rgb(15, 98, 200);
+  color: white;
+  border-radius: 0.2rem;
+  border-style: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  margin-bottom: 1rem;
+}
+._post{
+  background: White;
+  border-radius: 0.2rem;
+  line-height: 20%;
+  padding: 1px;
+  margin-bottom: 1rem;
+}
+.post_info{
+  font-size: 7pt;
+  color: rgb(101, 105, 107);
+  margin-left: 0.3rem;
+}
+.title{
+  font-size: 12pt;
+  margin-bottom: 1.2rem;
+}
+.post_body{
+  font-size: 8pt;
+  font-weight: lighter;
+  margin-left: 0.3rem;
+}
