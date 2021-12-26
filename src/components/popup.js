@@ -29,46 +29,56 @@ function Popup(props){
             timestamp: Date()
         }
         submitPost(post)
-        document.getElementById('create_post_form').reset()
+        setUsername('')
+        setTitle('')
+        setBody('')
         props.setTrigger(false)
+    }
+
+    const handleCancel = () => {
+        props.setTrigger(false)
+        setUsername('')
+        setTitle('')
+        setBody('')
     }
 
     return (props.trigger) ? (
         <div className = 'popup'>
-            <form onSubmit = {handleSubmit} id = 'create_post_form'>
+            <form onSubmit = {handleSubmit}>
                 <div>
-                    <label>
-                        <input
-                            type = 'text'
-                            placeholder = 'username'
-                            value = {username}
-                            onChange = {e => setUsername(e.target.value)}
-                            className = 'username_form'
-                        />
-                        <br></br>
-                        <input
-                            type = 'text'
-                            placeholder = 'title'
-                            value = {title}
-                            onChange = {e => setTitle(e.target.value)}
-                            className = 'title_form'
-                        />
-                        <br></br>
-                        <input 
-                            type = 'text'
-                            placeholder = 'post'
-                            vallue = {body}
-                            onChange = {e => setBody(e.target.value)}
-                            className = 'post_form'
-                        />
-                    </label>
+                    <input
+                        type = 'text'
+                        name = 'username'
+                        placeholder = 'Username'
+                        value = {username}
+                        onChange = {e => setUsername(e.target.value)}
+                        className = 'username_form'
+                    />
+                    <br></br>
+                    <input
+                        type = 'text'
+                        name = 'title'
+                        placeholder = 'Title'
+                        value = {title}
+                        onChange = {e => setTitle(e.target.value)}
+                        className = 'title_form'
+                    />
+                    <br></br>
+                    <input 
+                        type = 'text'
+                        name = 'post'
+                        placeholder = 'Text (optional)'
+                        vallue = {body}
+                        onChange = {e => setBody(e.target.value)}
+                        className = 'post_form'
+                    />
                 </div>
                 <input type = 'submit' value = 'Post'/>
-                <button className = 'close_btn' onClick = {() => props.setTrigger(false)}>Cancel</button>
+                <button className = 'close_btn' onClick = {handleCancel}>Cancel</button>
                     {props.children}
             </form>
         </div>
-    ) : ""
+    ) : ''
 }
 
 export default Popup
