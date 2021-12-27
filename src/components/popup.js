@@ -64,7 +64,7 @@ function Popup(props){
                         className = 'title_form'
                     />
                     <br></br>
-                    <input 
+                    <textarea 
                         type = 'text'
                         name = 'post'
                         placeholder = 'Text (optional)'
