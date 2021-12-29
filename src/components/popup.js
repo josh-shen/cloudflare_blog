@@ -22,11 +22,17 @@ function Popup(props){
     const handleSubmit = (e) => {
         e.preventDefault()
         console.log(username, title, body)
-        let post = {
-            title: title,
-            username: username,
-            content: body,
-            timestamp: Date()
+        //alert
+        if (username === '' || title === ''){
+            alert('Please include a username and title in your post')
+        }
+        else{
+            var post = {
+                title: title,
+                username: username,
+                content: body,
+                timestamp: Date()
+            }
         }
         submitPost(post)
         setUsername('')
