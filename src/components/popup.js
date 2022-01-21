@@ -74,7 +74,7 @@ function Popup(props){
                         type = 'text'
                         name = 'post'
                         placeholder = 'Text (optional)'
-                        vallue = {body}
+                        value = {body}
                         onChange = {e => setBody(e.target.value)}
                         className = 'post_form'
                     />
